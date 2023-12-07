@@ -30,7 +30,11 @@ func IsEvenNumber(number int) {
 
 // グロタンディーク素数判定関数。与えられた引数がグロタンディーク素数の場合、その趣旨を表示する
 // グロタンディーク素数とは「57の数のこと」
+// assined ItoKosuke
 func IsGrothendieckPrime(number int) {
+	if number == 57 {
+		println("グロタンディーク素数である")
+	}
 	return
 }
 

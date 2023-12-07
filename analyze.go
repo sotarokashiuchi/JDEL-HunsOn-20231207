@@ -3,6 +3,9 @@ package analyze
 
 import (
 	"fmt"
+	"strconv"
+	"strings"
+	"unicode/utf8"
 )
 
 // 奇数判定関数。与えられた引数が奇数の場合、その趣旨を表示する
@@ -39,6 +42,17 @@ func IsGrothendieckPrime(number int) {
 // レピュニット数とは「全ての桁の数字が 1である自然数のこと」
 // ex) 1, 11, 111, ...
 func IsRepunitNumber(number int) {
+	number_String := strconv.Itoa(number)
+	var number_Length int = utf8.RuneCountInString(number_String) - 1
+	number_Nomalization := strings.Replace(number_String, "-", "", 1)
+	Slice := strings.Split(number_Nomalization, "")
+	for i := 0; i < number_Length; i++ {
+		if Slice[i] != "1" {
+			fmt.Println(number, "はレピュニット数ではありません")
+			break
+		}
+	}
+	fmt.Println(number, "はレピュニット数です")
 	return
 }
 

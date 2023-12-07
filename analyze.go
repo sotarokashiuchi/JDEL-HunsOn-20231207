@@ -1,7 +1,9 @@
 // 数値解析パッケージ
 package analyze
 
-import "fmt"
+import (
+	"fmt"
+)
 
 // 奇数判定関数。与えられた引数が奇数の場合、その趣旨を表示する
 // 奇数とは、「2で割り切れない整数」
@@ -22,7 +24,11 @@ func IsEvenNumber(number int) {
 
 // グロタンディーク素数判定関数。与えられた引数がグロタンディーク素数の場合、その趣旨を表示する
 // グロタンディーク素数とは「57の数のこと」
+// assined ItoKosuke
 func IsGrothendieckPrime(number int) {
+	if number == 57 {
+		println("グロタンディーク素数である")
+	}
 	return
 }
 

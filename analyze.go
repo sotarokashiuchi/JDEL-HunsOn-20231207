@@ -121,6 +121,14 @@ func IsBetrothedNumber(x, y int) {
 // ピタゴラス数とは「a^2 + b^2 = c^2 を満たす3つの自然数の組 (a, b, c) のこと」
 // ex) 3と４と5, 5と12と13, ...
 func IsPythagoreanTriple(x, y, z int) {
+	a := x * x
+	b := y * y
+	c := z * z
+	if a+b == c {
+		println("ピタゴラス数である")
+	} else {
+		println("ピタゴラス数ではない")
+	}
 	return
 }
 

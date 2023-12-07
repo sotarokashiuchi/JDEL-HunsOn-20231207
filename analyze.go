@@ -3,6 +3,9 @@ package analyze
 
 import (
 	"fmt"
+	"strconv"
+	"strings"
+	"unicode/utf8"
 )
 
 // 奇数判定関数。与えられた引数が奇数の場合、その趣旨を表示する
@@ -19,12 +22,19 @@ func IsOddNumber(number int) {
 // 偶数とは、「2で割り切れる整数」
 // ex) 2, 4, 6, 8, ...
 func IsEvenNumber(number int) {
+	if number%2 == 0 {
+		fmt.Println(number, "は偶数です")
+	}
 	return
 }
 
 // グロタンディーク素数判定関数。与えられた引数がグロタンディーク素数の場合、その趣旨を表示する
 // グロタンディーク素数とは「57の数のこと」
+// assined ItoKosuke
 func IsGrothendieckPrime(number int) {
+	if number == 57 {
+		println("グロタンディーク素数である")
+	}
 	return
 }
 
@@ -32,6 +42,17 @@ func IsGrothendieckPrime(number int) {
 // レピュニット数とは「全ての桁の数字が 1である自然数のこと」
 // ex) 1, 11, 111, ...
 func IsRepunitNumber(number int) {
+	number_String := strconv.Itoa(number)
+	var number_Length int = utf8.RuneCountInString(number_String) - 1
+	number_Nomalization := strings.Replace(number_String, "-", "", 1)
+	Slice := strings.Split(number_Nomalization, "")
+	for i := 0; i < number_Length; i++ {
+		if Slice[i] != "1" {
+			fmt.Println(number, "はレピュニット数ではありません")
+			break
+		}
+	}
+	fmt.Println(number, "はレピュニット数です")
 	return
 }
 
@@ -89,7 +110,26 @@ func IsMersenneNumber(number int) {
 // 婚約数判定関数。与えられた引数が婚約数の場合、その趣旨を表示する
 // 婚約数とは「1と自身を除いた約数の和が互いに他方に等しい自然数の組」
 // ex) 48と75, 140と195, 1050と1925, ...
+// assined ItoKosuke
 func IsBetrothedNumber(x, y int) {
+	var sumX, sumY int
+	sumX = 0 //xの 1と自身を除いた約数の和
+	sumY = 0 //yの 1と自身を除いた約数の和
+
+	for i := 2; i <= x/2; i++ {
+		if x%i == 0 {
+			sumX += i
+		}
+	}
+	for i := 2; i <= y/2; i++ {
+		if x%i == 0 {
+			sumY += i
+		}
+	}
+
+	if sumX == sumY {
+		println("婚約数である")
+	}
 	return
 }
 

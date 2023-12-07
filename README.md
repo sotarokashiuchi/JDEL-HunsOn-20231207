@@ -6,6 +6,7 @@
 
 ## 開発者
 - 各受講生の名前を記入してください。
+折戸空人
 - UenakaHaruto
 - 崎山圭佑
 - KashiuchiSotaro

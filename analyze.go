@@ -94,7 +94,26 @@ func IsMersenneNumber(number int) {
 // 婚約数判定関数。与えられた引数が婚約数の場合、その趣旨を表示する
 // 婚約数とは「1と自身を除いた約数の和が互いに他方に等しい自然数の組」
 // ex) 48と75, 140と195, 1050と1925, ...
+// assined ItoKosuke
 func IsBetrothedNumber(x, y int) {
+	var sumX, sumY int
+	sumX = 0 //xの 1と自身を除いた約数の和
+	sumY = 0 //yの 1と自身を除いた約数の和
+
+	for i := 2; i <= x/2; i++ {
+		if x%i == 0 {
+			sumX += i
+		}
+	}
+	for i := 2; i <= y/2; i++ {
+		if x%i == 0 {
+			sumY += i
+		}
+	}
+
+	if sumX == sumY {
+		println("婚約数である")
+	}
 	return
 }
 

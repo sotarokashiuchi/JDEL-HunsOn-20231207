@@ -47,6 +47,7 @@ func IsRepunitNumber(number int) {
 			break
 		}
 	}
+	fmt.Println(number, "はレピュニット数です")
 	return
 }
 

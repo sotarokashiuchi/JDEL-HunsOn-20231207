@@ -42,9 +42,10 @@ func IsGrothendieckPrime(number int) {
 // レピュニット数とは「全ての桁の数字が 1である自然数のこと」
 // ex) 1, 11, 111, ...
 func IsRepunitNumber(number int) {
-	var number_String string = strconv.Itoa(number)
-	var number_Length int = utf8.RuneCountInString(number_String)
-	Slice := strings.Split(number_String, "")
+	number_String := strconv.Itoa(number)
+	var number_Length int = utf8.RuneCountInString(number_String) - 1
+	number_Nomalization := strings.Replace(number_String, "-", "", 1)
+	Slice := strings.Split(number_Nomalization, "")
 	for i := 0; i < number_Length; i++ {
 		if Slice[i] != "1" {
 			fmt.Println(number, "はレピュニット数ではありません")

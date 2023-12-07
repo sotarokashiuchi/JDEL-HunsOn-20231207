@@ -97,6 +97,14 @@ func IsAmicableNumbers(x, y int) {
 // 平方数とは「整数の自乗（二乗）で表される数である」
 // ex) 0, 1, 4, 9, 16, 25, ...
 func IsSquareNumber(number int) {
+	var i int
+	for ; i*i <= number; i++ {
+		if i*i == number {
+			fmt.Println(number, "は平方数です")
+			return
+		}
+	}
+
 	return
 }
 

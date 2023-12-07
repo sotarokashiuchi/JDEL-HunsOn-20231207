@@ -1,7 +1,9 @@
 // 数値解析パッケージ
 package analyze
 
-import "fmt"
+import (
+	"fmt"
+)
 
 // 奇数判定関数。与えられた引数が奇数の場合、その趣旨を表示する
 // 奇数とは、「2で割り切れない整数」
@@ -51,6 +53,22 @@ func IsPerfectNumber(number int) {
 // 親和数とは「自身を除く約数の和が、他方に等しい自然数の組」
 // ex) 220と284, 1184と1210, 2620と2924,...
 func IsAmicableNumbers(x, y int) {
+	if x%2 == 0 && y%2 == 0 {
+		var sum, sum2 int
+		for a := 2; a <= x; a++ {
+			if x%a == 0 {
+				sum += a
+			}
+		}
+		for b := 2; b <= y; b++ {
+			if y%b == 0 {
+				sum2 += b
+			}
+		}
+		if sum == sum2 {
+			fmt.Println(x, "と", y, "は親和数です。")
+		}
+	}
 	return
 }
 

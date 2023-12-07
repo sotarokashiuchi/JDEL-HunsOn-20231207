@@ -7,7 +7,13 @@
 ## 開発者
 - 各受講生の名前を記入してください。
 折戸空人
-
+- UenakaHaruto
+- 崎山圭佑
+- KashiuchiSotaro
+- 伊藤康介
+-森智紀
+- 巻渕 友慎
+- yamamotoyuuki
 ## 数値解析ソフト
 - 与えられた整数の特性を解析し、表示するソフト
 - [仕様書](./docs/analyze.pdf)

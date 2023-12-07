@@ -37,6 +37,13 @@ func IsRepunitNumber(number int) {
 // 素数とは「1を除く約数が1とその数自身だけである自然数」
 // ex) 2, 3, 5, 7, ...
 func IsPrimeNumber(number int) {
+	if number != 1 {
+		fmt.Println(number, "は素数です")
+	}
+
+	if number%number == 0 {
+		fmt.Println(number, "は素数です")
+	}
 	return
 }
 

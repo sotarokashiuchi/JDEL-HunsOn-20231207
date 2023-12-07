@@ -9,7 +9,7 @@
 - KashiuchiSotaro
 - 伊藤康介
 -森智紀
-- 巻渕 友慎
+- 巻渕 友慎- yamamotoyuuki
 ## 数値解析ソフト
 - 与えられた整数の特性を解析し、表示するソフト
 - [仕様書](./docs/analyze.pdf)

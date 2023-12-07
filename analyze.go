@@ -1,7 +1,12 @@
 // 数値解析パッケージ
 package analyze
 
-import "fmt"
+import (
+	"fmt"
+	"strconv"
+	"strings"
+	"unicode/utf8"
+)
 
 // 奇数判定関数。与えられた引数が奇数の場合、その趣旨を表示する
 // 奇数とは、「2で割り切れない整数」
@@ -30,6 +35,15 @@ func IsGrothendieckPrime(number int) {
 // レピュニット数とは「全ての桁の数字が 1である自然数のこと」
 // ex) 1, 11, 111, ...
 func IsRepunitNumber(number int) {
+	var number_String string = strconv.Itoa(number)
+	var number_Length int = utf8.RuneCountInString(number_String)
+	Slice := strings.Split(number_String, "")
+	for i := 0; i < number_Length; i++ {
+		if Slice[i] != "1" {
+			fmt.Println(number, "はレピュニット数ではありません")
+			break
+		}
+	}
 	return
 }
 
